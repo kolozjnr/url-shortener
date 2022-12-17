@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('shortener_links', function (Blueprint $table) {
             $table->id();
+            $table->string('code');
+            $table->string('link');
             $table->timestamps();
         });
     }

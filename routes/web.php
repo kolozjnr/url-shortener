@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\ShortenerLinks;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,9 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('app.index');
 });
+Route::get('generate-shorten-link', 'ShortenerLinks@index');
+Route::post('generate-shorten-link', 'ShortenerLinks@store')->name('generate.shorten.link.post');
+   
+//Route::get('{code}', 'ShortenerLinks@shortenLink')->name('shorten.link');
