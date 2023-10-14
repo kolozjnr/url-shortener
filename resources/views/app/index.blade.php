@@ -91,7 +91,8 @@
           <h2 data-aos="fade-up">Your Lightning Fast Delivery Partner</h2>
           <p data-aos="fade-up" data-aos-delay="100">Facere distinctio molestiae nisi fugit tenetur repellat non praesentium nesciunt optio quis sit odio nemo quisquam. eius quos reiciendis eum vel eum voluptatem eum maiores eaque id optio ullam occaecati odio est possimus vel reprehenderit</p>
 
-          <form action="{{ route('generate.shorten.link.post') }} class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+          <form action="{{ route('Store') }}" method="POST" class="form-search d-flex align-items-stretch mb-3" data-aos="fade-up" data-aos-delay="200">
+            @csrf
             <input type="text" name="link" class="form-control" placeholder="Paste url to shorten">
             <button type="submit" class="btn btn-primary">Get URL</button>
           </form>

@@ -2,6 +2,7 @@
 
 use App\Models\ShortenerLinks;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\ShortenerLinksController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,10 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('app.index');
-});
-Route::get('generate-shorten-link', 'ShortenerLinks@index');
-Route::post('generate-shorten-link', 'ShortenerLinks@store')->name('generate.shorten.link.post');
+// Route::get('/', function () {
+//     return view('app.index');
+// });
+Route::get('/', [ShortenerLinksController::class, 'index'])->name("Home");
+Route::post('generate', [ShortenerLinksController::class, 'store'])->name('Store');
+Route::get('/{code}', [ShortenerLinksController::class, 'redirect'])->name('Redirect');
    
 //Route::get('{code}', 'ShortenerLinks@shortenLink')->name('shorten.link');
