@@ -32,6 +32,12 @@ class ShortenerLinksController extends Controller
     }
 
     public function redirect($code){
-        
+        $data = $this->urlservices->redirect($code);
+        //return view('app.index', compact('data'));
+    }
+
+    public function getUrl(){
+       $data = $this->urlservices->getUrl();
+       return view('app.index', compact('data'));
     }
 }

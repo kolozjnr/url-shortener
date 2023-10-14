@@ -28,4 +28,11 @@ class UrlService
         }
         return redirect($url->url);
     }
+
+    public function getUrl()
+    {
+        $data = ShortenerLinks::latest()->get();
+
+        return $data;
+    }
 }
